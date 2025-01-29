@@ -1,0 +1,141 @@
+{
+  "import": {
+    "prefix": "import",
+    "body": [
+      "import ${1:Standard}::*;",
+      "${2}"
+    ],
+    "description": "import statement"
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if (${1}) begin",
+      "  ${2}",
+      "end"
+    ],
+    "description": "if statement"
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for (${1}) begin",
+      "  ${2}",
+      "end"
+    ],
+    "description": "for loop"
+  },
+  "interface": {
+    "prefix": "interface",
+    "body": [
+      "interface ${1:InterfaceName};",
+      "  ${2}",
+      "endinterface"
+    ],
+    "description": "interface definition"
+  },
+  "method": {
+    "prefix": "method",
+    "body": [
+      "method ${1:methodname} (${2});",
+      "  ${3}",
+      "endmethod"
+    ],
+    "description": "method definition"
+  },
+  "function": {
+    "prefix": "function",
+    "body": [
+      "function ${1:functionname} (${2});",
+      "  ${3}",
+      "endfunction"
+    ],
+    "description": "function definition"
+  },
+  "module": {
+    "prefix": "module",
+    "body": [
+      "module ${1:modulename} (${2});",
+      "  ${3}",
+      "endmodule"
+    ],
+    "description": "module definition"
+  },
+  "rule": {
+    "prefix": "rule",
+    "body": [
+      "rule ${1:rulename};",
+      "  ${2}",
+      "endrule"
+    ],
+    "description": "rule definition"
+  },
+  "begin": {
+    "prefix": "begin",
+    "body": [
+      "begin",
+      "  ${1}",
+      "end;"
+    ],
+    "description": "begin block"
+  },
+  "case": {
+    "prefix": "case",
+    "body": [
+      "case (${1})",
+      "  ${2}",
+      "endcase"
+    ],
+    "description": "case statement"
+  },
+  "instance": {
+    "prefix": "instance",
+    "body": [
+      "instance ${1};",
+      "  ${2}",
+      "endinstance"
+    ],
+    "description": "instance definition"
+  },
+  "typeclass": {
+    "prefix": "typeclass",
+    "body": [
+      "typeclass ${1};",
+      "  ${2}",
+      "endtypeclass"
+    ],
+    "description": "typeclass definition"
+  },
+  "action": {
+    "prefix": "action",
+    "body": [
+      "action",
+      "  ${1}",
+      "endaction;"
+    ],
+    "description": "action definition"
+  },
+  "actionvalue": {
+    "prefix": "actionvalue",
+    "body": [
+      "actionvalue",
+      "  ${1}",
+      "endactionvalue;"
+    ],
+    "description": "actionvalue definition"
+  },
+  "deriving": {
+    "prefix": "deriving",
+    "body": ["deriving(Bits, Eq, FShow);"],
+    "description": "Derive typeclasses."
+  },
+  "package": {
+    "prefix": "package",
+    "body": [
+      "package ${1};",
+      "  ${2}",
+      "endpackage"
+    ],
+    "description": "package definition"
+  }
+}
