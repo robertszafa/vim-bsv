@@ -5,6 +5,33 @@ endif
 " BSV is case-sensitive
 syntax case match
 
+" See BSV_lang_ref_guide for full list. The following is probably incomplete.
+
+syntax match bsvOperator "!="
+syntax match bsvOperator "=="
+syntax match bsvOperator "<-"
+syntax match bsvOperator "&\@<!&&&\@!"
+syntax match bsvOperator "||"
+syntax match bsvOperator "<<"
+syntax match bsvOperator ">>"
+syntax match bsvOperator ">="
+syntax match bsvOperator "<="
+syntax match bsvOperator "<"
+syntax match bsvOperator ">"
+syntax match bsvOperator "+"
+syntax match bsvOperator "-"
+syntax match bsvOperator "*"
+syntax match bsvOperator "/"
+syntax match bsvOperator "%"
+syntax match bsvOperator "&"
+syntax match bsvOperator "|"
+syntax match bsvOperator "!"
+syntax match bsvOperator "^""
+syntax match bsvOperator "~&" " AND bit reduction
+syntax match bsvOperator "~|" " OR bit reduction
+syntax match bsvOperator "^~" " XNOR bit reduction
+syntax match bsvOperator "~^" " XNOR bit reduction
+
 syntax match bsvAssign "<-"
 syntax match bsvAssign "<="
 syntax match bsvAssign "="
@@ -87,6 +114,7 @@ syntax keyword bsvSystemTask $fopen $fclose $fgetc $ungetc $fflush
 syntax keyword bsvSystemTask $stop $finish $time $stime
 syntax keyword bsvSystemTask $format $signed $unsigned $test$plusargs
 
+highlight link bsvOperator Operator
 highlight link bsvSemicolon Normal
 highlight link bsvAssign Operator
 highlight link bsvDelimiter Operator
@@ -121,23 +149,3 @@ highlight link bsvAttributes SpecialComment
 
 highlight link bsvSystemTask Function
 
-" we need the conceal feature (vim ≥ 7.3)
-if !has('conceal') || &enc != 'utf-8' || &diff
-    finish
-endif
-
-syntax match bsvNiceOperator "!=" conceal cchar=≠
-syntax match bsvNiceOperator "==" conceal cchar=≡
-syntax match bsvNiceOperator "<-" conceal cchar=←
-syntax match bsvNiceOperator "&\@<!&&&\@!" conceal cchar=∧
-syntax match bsvNiceOperator "||" conceal cchar=∨
-syntax match bsvNiceOperator "<<" conceal cchar=≪
-syntax match bsvNiceOperator ">>" conceal cchar=≫
-syntax match bsvNiceOperator ">=" conceal cchar=≥
-syntax match bsvNiceOperator "<=" conceal cchar=⇐
-" Register write is more common than check for less-equal.
-" In the worst case, replace x <= a by a >= x or !(x > a).
-
-highlight link bsvNiceOperator Operator
-highlight! link Conceal Operator
-setlocal conceallevel=1
